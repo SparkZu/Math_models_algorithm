@@ -34,5 +34,3 @@ for supplier in select_supplier:
     plt.title(f'供应商ID{supplier}')
     plt.legend(loc='best', prop={'size': 8})
     plt.show()
-
-print("d")
