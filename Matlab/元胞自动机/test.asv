@@ -60,25 +60,26 @@ while(1)
     pause(0.03)
     drawnow
 end
-
 %% 澳洲火灾
 
 clc,clear;
 n=300;
-plight=1e-6;
-pgrow=1e-2;
+plight=1e-5;
+pgrow=1e-3;
 z=zeros(n);
-ul=[n,2:n-1]
+ul=[n,1:n-1]
 dr=[2:n,1];
 imh=image(cat(3,z,z,z));
+axis equal
 %空地为0，着火为1，树为2
 while(1)
     sum=(z(ul,:)==1)+(z(dr,:)==1)+(z(:,ul)==1)+(z(:,dr)==1);
     z=2*(z==2)-((z==2)&(sum>0|(rand(n)<plight))) +2*((z==0)&(rand(n)<pgrow));
-    set(imh,'cdata',cat(3,z,z,z));
+    set(imh,'cdata',cat(3,z==1,z==2,zeros(n)));
     drawnow
-end
 
+end
+%% 
 
 
 

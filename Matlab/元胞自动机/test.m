@@ -35,7 +35,6 @@ while(1)
     set(Ch,'cdata',cat(3,Se,z,z));
     pause(0.03)
 end
-
 %% 生命游戏
 clc,clear;
 n=200;
@@ -77,6 +76,7 @@ while(1)
     z=2*(z==2)-((z==2)&(sum>0|(rand(n)<plight))) +2*((z==0)&(rand(n)<pgrow));
     set(imh,'cdata',cat(3,z==1,z==2,zeros(n)));
     drawnow
+
 end
 %% 
 
