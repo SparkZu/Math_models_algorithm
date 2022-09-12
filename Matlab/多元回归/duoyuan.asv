@@ -29,7 +29,6 @@ y=[100 75 80 70 50 65 90 100 110 60 ]';
 x=[x1' x2'];
 rstool(x, y, 'purequadratic')
 
-%% 
-rstool()
+
 
 
